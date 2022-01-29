@@ -1,1 +1,1 @@
-documents/adder-error-detector.md
+../documents/adder-error-detector.md
