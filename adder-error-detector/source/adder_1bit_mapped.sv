@@ -4,7 +4,7 @@
 // January 28, 2022
 
 
-module adder_1bit
+module adder_1bit_mapped
 (
 	input logic [17:15]SW,
 	output logic [17:16]LEDR
