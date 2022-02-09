@@ -1,0 +1,138 @@
+Flow report for mapped_controller
+Wed Feb  9 17:59:01 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Wed Feb  9 17:59:01 2022       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                      ; mapped_controller                           ;
+; Top-level Entity Name              ; mapped_controller                           ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C8                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 85 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 79 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 37 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 46                                          ;
+; Total pins                         ; 13 / 529 ( 2 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/09/2022 17:58:29 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; mapped_controller   ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++-------------------------------------+------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                          ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 84585009093278.164444750915472                 ; --            ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                             ; --            ; --          ; eda_simulation ;
+; EDA_MAINTAIN_DESIGN_HIERARCHY       ; On                                             ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog                                        ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                             ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                           ; --            ; --          ; eda_simulation ;
+; ENABLE_DRC_SETTINGS                 ; On                                             ; Off           ; --          ; --             ;
+; FMAX_REQUIREMENT                    ; 100 MHz                                        ; --            ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS             ; 4                                              ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)         ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)         ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)         ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; /home/jared/496/custom-game-controller         ; --            ; --          ; --             ;
+; SEARCH_PATH                         ; /home/jared/496/custom-game-controller/include ; --            ; --          ; --             ;
+; SMART_RECOMPILE                     ; On                                             ; Off           ; --          ; --             ;
+; TIMING_ANALYZER_DO_REPORT_TIMING    ; On                                             ; Off           ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                            ; --            ; --          ; eda_blast_fpga ;
+; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                             ; Verilog_2001  ; --          ; --             ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                            ; --            ; --          ; --             ;
++-------------------------------------+------------------------------------------------+---------------+-------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 425 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:12     ; 1.0                     ; 1191 MB             ; 00:00:15                           ;
+; Design Assistant     ; 00:00:01     ; 1.0                     ; 597 MB              ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 597 MB              ; 00:00:02                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 378 MB              ; 00:00:05                           ;
+; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:36                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; jared-xubuntu    ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Fitter               ; jared-xubuntu    ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Design Assistant     ; jared-xubuntu    ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Timing Analyzer      ; jared-xubuntu    ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Assembler            ; jared-xubuntu    ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --64bit mapped_controller -c mapped_controller
+quartus_fit --64bit mapped_controller -c mapped_controller
+quartus_drc mapped_controller -c mapped_controller
+quartus_sta --64bit mapped_controller -c mapped_controller
+quartus_asm mapped_controller -c mapped_controller
+
+
+
