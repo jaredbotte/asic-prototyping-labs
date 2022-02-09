@@ -4,13 +4,13 @@
 This document contains my (Jared's) solutions to the Adder/Error Detector lab.
 
 ## Sensor error detector
-My code solution to the sensor error detector is located in the `adder-error-detector` folder on github. It contains the code to show the error on the green LED between the 7-segment displays, and uses switches 3:0 as sensor inputs. Below are some pictures of my solution running on the board.
+My code solution to the sensor error detector is located in the `adder-error-detector` folder on GitHub. It contains the code to show the error on the green LED between the 7-segment displays, and uses switches 3:0 as sensor inputs. Below are some pictures of my solution running on the board.
 
 ![Running on LEDG[8]. Currently no errors.](./img/sed-switch-green-off.jpg)
 No error condition met. The switches are currently all off and LEDG8 is off.
 
 ![Running on LEDG[8]. Error condition met.](./img/sed-switch-green-on.jpg)
-An erro condition is now met since the high priority error is tripped. LEDG8 is on.
+An error condition is now met since the high priority error is tripped. LEDG8 is on.
 
 ### Challenge 1
 The code for this section is not in the repository, but simply replace `input logic [3:0]SW,` with `input logic [3:0]KEY,` and replace the references to `SW[x]` with `KEY[x]` and the program will use the push buttons instead of the switches.
@@ -47,7 +47,7 @@ All uninitialized LEDs will be dimmed. All initialized LEDs will be low be defau
 
 ## 1-bit adder
 
-The code for my implementation can be seen in the `adder-error-detector` folder on github. Below are some pictures of my solution running.
+The code for my implementation can be seen in the `adder-error-detector` folder on GitHub. Below are some pictures of my solution running.
 
 ![0 + 0 + no carry-in = 0 + no carry-out](./img/adder1-no-input.jpg)
 Inputs ci:0, a:0, b:0 Outputs co:0, sum:0
@@ -80,7 +80,7 @@ You can turn this...
 ```
 
 ## 8-bit adder
-My solution for this section can be found in the `adder-error-detector` folder on github. Below are some images of my final implementation in action. I used a 2D array to act as a multiplexer, taking in the input from the switches and sum and outputting the appropriate 7-segment value to display. I'm quite happy with this implementation.
+My solution for this section can be found in the `adder-error-detector` folder on GitHub. Below are some images of my final implementation in action. I used a 2D array to act as a multiplexer, taking in the input from the switches and sum and outputting the appropriate 7-segment value to display. I'm quite happy with this implementation.
 
 ![No inputs. The display shows all zeros.](./img/adder8-no-input.jpg)
 Inputs ci:0 a:0x00, b:0x00, Outputs co:0, sum:0x00
