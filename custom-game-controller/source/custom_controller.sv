@@ -10,15 +10,14 @@ module custom_controller
     input logic data,
     output logic latch,
     output logic pulse,
-    output logic shift,
     output logic [7:0] buttons
 );
     
     logic [19:0] system_count;
-    logic [10:0] pulse_length_count;
-    logic [10:0] shift_reg_count;
+    logic [9:0] pulse_length_count;
+    logic [9:0] shift_reg_count;
     logic [7:0] next_buttons;
-    logic pulse_en;
+    logic pulse_en, shift;
 
     flex_stp_sr #(.NUM_BITS(8), .SHIFT_MSB(1'b1)) SHIFT_REGISTER (.clk(shift), .n_rst(n_rst), .shift_enable(pulse_en), .serial_in(data), .parallel_out(next_buttons));
 
