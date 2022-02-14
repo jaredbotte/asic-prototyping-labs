@@ -1,0 +1,1 @@
+../documents/custom-game-controller.md
