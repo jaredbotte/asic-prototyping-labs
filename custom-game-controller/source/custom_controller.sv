@@ -17,7 +17,7 @@ module custom_controller
     logic [9:0] pulse_length_count;
     logic [9:0] shift_reg_count;
     logic [7:0] next_buttons;
-    logic pulse_en, shift;
+    logic pulse_en, shift, store;
 
     flex_stp_sr #(.NUM_BITS(8), .SHIFT_MSB(1'b1)) SHIFT_REGISTER (.clk(clk), .n_rst(n_rst), .shift_enable(shift), .serial_in(data), .parallel_out(next_buttons));
 
@@ -31,10 +31,11 @@ module custom_controller
         latch = ~(system_count < 601);
         pulse = ~(pulse_length_count < 301);
         pulse_en = system_count < 5400;
+        store = system_count == 6000;
         shift = shift_reg_count == 150;
     end
 
-    always_ff @ (negedge pulse_en, negedge n_rst)
+    always_ff @ (posedge store, negedge n_rst)
     begin
         if(n_rst == 1'b0)
             buttons <= '1;
