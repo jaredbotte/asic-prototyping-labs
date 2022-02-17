@@ -50,7 +50,7 @@ A couple things to note:
 
 I disassembled my reproduction SNES controller, with the intention of determining the chip that converts the button inputs to a serial stream, but the chip is unfortunately covered, so you can't see it. Luckily the internet has plenty of pictures of real SNES controllers such as this one from ifixit:
 
-![](https://guide-images.cdn.ifixit.com/igi/lltdCmMuWOMUT6VN.huge)
+![The SNES controller PCB. Source: ifixit.com](https://guide-images.cdn.ifixit.com/igi/lltdCmMuWOMUT6VN.huge)
 
 As you can see, it uses the 520B IC. Unfortunately, I was unable to find a datasheet for that specific chip anywhere online, but plenty of people vouch that it's a 16-bit parallel-to-serial shift register. Given the protocol that this controller uses and the traces on the controller's PCB, we can see that this makes sense.
 
@@ -165,10 +165,12 @@ The first challenge is to create a 60Hz `latch` signal that follows the provided
 
 A proper `latch` signal can be seen in the images below.
 
-![](./img/latch-signal.jpg)
+![The latch signal up close](./img/latch-signal.jpg)
+
 The latch signal up close. You can see it is exactly 12µs wide.
 
-![](./img/latch-freq.jpg)
+![Zoomed out latch signals](./img/latch-freq.jpg)
+
 Multiple latch signals. You can see that they are occurring at a frequency of 60Hz
 
 #### Create the `pulse` Signal
@@ -178,12 +180,12 @@ Now that you have a proper `latch` signal, create the `pulse` signal, which shou
 
 Proper `latch` and `pulse` signals can be seen together below.
 
-![](./img/latch-and-pulse.jpg)
+![The latch and pulse signals together](./img/latch-and-pulse.jpg)
 
 #### Create the `shift` Signal
 This signal should be identical to the `pulse` signal, but shifted forward by 3µs. For testing, output it on GPIO[2] and compare it to the `pulse` signal. The two signals together can be seen in the image below.
 
-![](./img/pulse-and-shift.jpg)
+![The pulse and shift signals shown together](./img/pulse-and-shift.jpg)
 
 #### Buffer the `buttons` Output
 Remember that we want to update the `buttons` output only after all the buttons have been received. Otherwise, out `buttons` output would constantly be changing and it would be impossible to determine which buttons are being pressed. To ensure no issues, chose a point sometime after the pulses have stopped to load output of the StP shift register into `buttons`.
