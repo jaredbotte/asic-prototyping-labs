@@ -28,7 +28,7 @@ module dec_display
 
     assign val = value + carry_in;
 
-    assign carry_out = (val > 9) 
+    assign carry_out = (val > 9);
 
     always_comb begin : display_block
            if (val < 9)
