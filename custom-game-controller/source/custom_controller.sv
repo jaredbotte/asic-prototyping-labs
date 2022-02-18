@@ -1,4 +1,4 @@
-// A module to interface with a custom controller. NOT MAPPED.
+// A module to interface with a custom controller.
 // Jared Botte
 // jbotte@purdue.edu
 // February 7, 2022
