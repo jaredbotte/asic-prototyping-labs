@@ -1,24 +1,22 @@
-# ASIC FPGA Prototyping - LCD UART Receiver
+# ASIC FPGA Prototyping - UART Receiver
 
 ## Overview
-In this lab, we will be using the UART receiver designed in ECE 337 and some of the DE2-115s peripherals to interact with a terminal.
+In this lab, we will be using the UART receiver designed in ECE 337 and the 7-segment displays to interact with a terminal.
 
 ## Required Materials
 It will be necessary to have a USB to RS-232 cable to connect your computer to the DE2-115 development board.
 
-I reccommend [this one for \$9 on amazon](https://www.amazon.com/gp/product/B0753HBT12/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+I recommend [this one for \$9 on amazon](https://www.amazon.com/gp/product/B0753HBT12/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 
 ## Setup
 To begin, open a terminal window, create a new directory, and move into it. Also, setup the directory structure and copy over the base makefile.
 
 ```bash
-mkdir lcd-uart-receiver
-cd lcd-uart-receiver
+mkdir uart-receiver
+cd uart-receiver
 mkdir source
 cp $TOOLSDIR/makefile .
 ```
-
-This will be the standard setup for most labs.
 
 In addition to the above setup, copy over all the files from your UART implementation.
 
@@ -32,7 +30,7 @@ First, create a new 7-segment display module called `alpha_display` that will di
 | ascii | input | 8 bits | the 8-bit ascii value to interpret |
 | disp | output | 7 bits | the 7-segment display to output on |
 
-Since 7 segment displays have 7 segments which can be on or off, we can theoretically display all 128 characters defined by the original ASCII standard. However, many of these characters are unrecognizable (think x, m, and w) and thus wouldn't make much practical sense to implement.
+Since 7 segment displays have 7 segments which can be on or off, we can theoretically display all 128 characters defined by the original ASCII standard (2^7 = 128). However, many of these characters are unrecognizable (think x, m, and w) and thus wouldn't make much practical sense to implement.
 
 Instead, we'll implement the characters that display nicely, and have a catch-all case to display nothing for all the other characters.
 
@@ -50,7 +48,7 @@ Some resources on 7-segment display characters and ASCII codes:
  - [wikichip](https://en.wikichip.org/wiki/seven-segment_display/representing_letters)
  - [pfnicholls](http://pfnicholls.com/Electronics/LEDDisplays.html)
 
- Once completed, be sure to test your design by writing "hello" on the 7 segment displays.
+Once completed, be sure to test your design by writing "hello" on the 7 segment displays.
 
 ## Modifications to the UART module
 As it currently stands, our UART module requires a baud rate of 400Mb/s. For reference, the highest standardized baud rate is under 1Mb/s. Additionally, we will be using the DE2's 50MHz clock instead of a 400MHz clock. This gives us a new baud rate of 5Mbps, although we want to use something more standard.
@@ -99,7 +97,7 @@ What we want:
 | ---- |
 | ![Bits properly sampled](./img/good_sample.jpg)
 
-Further modify your UART design to use a timer so that the signal samples occur in the middle of the bit.
+Further modify your UART design to use a timer in the wait state so that the signal samples occur in the middle of the bit.
 
 
 ## Receiving multiple characters
