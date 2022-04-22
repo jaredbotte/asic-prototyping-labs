@@ -14,12 +14,13 @@ module vga_timing
     output logic [9:0] vPix,
     output logic n_blank,
     output logic n_sync,
-    output logic vga_clk
+    output logic vga_clk,
+    output logic frame_end
 );
 
     logic [9:0] h_count, v_count;
     logic [1:0] clk_div_cnt;
-    logic line_end, frame_end;
+    logic line_end;
 
     // Clock divider because we need a 25 MHz clock for VGA
     flex_counter #(.NUM_CNT_BITS(2)) CLK_DIVIDER (.clk(clk), .n_rst(n_rst), .clear(1'b0), .count_enable(1'b1), .rollover_val(2'd2), .count_out(clk_div_cnt));
