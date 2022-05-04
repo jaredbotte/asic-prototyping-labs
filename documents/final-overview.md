@@ -11,7 +11,7 @@ Spring 2022
 This report will discuss the work performed over the course of the Spring 2022 semester for ECE 49600 - ASIC FPGA Prototyping. I will discuss the deliverables created, future work, and hardware limitations encountered.
 
 ## Summary
-The primary goal of this independent study was for me to get more exposure to FPGA and Digital Logic development. To do this I took the labs completed in ECE 33700, expanded upon them, and created lab experiments to bring those labs onto a physical FPGA development board. The Altera DE2-115 FPGA development board was used as the hardware platform for these labs, as it is used in ECE 43700 and contains many useful peripherals.
+The primary goal of this independent study was for me to get more exposure to FPGA and Digital Logic development. To do this I took the labs completed in ECE 33700, expanded upon them, and created lab experiments to bring those labs onto a physical FPGA development board. The Altera DE2-115 FPGA development board was used as the hardware platform for these labs, as it is used in ECE 43700 and contains many useful peripherals. The ultimate goal of these labs is to integrate them as part as ECE 337 to further reinforce the topics learned in that class.
 
 ## Deliverables
 All of the work produced for this independent study are located in two GitHub repositories.
@@ -54,16 +54,16 @@ The original plan for a FIR filter lab was to use the 24-bit audio Codec that's 
 ### VGA
 As part of the custom game controller series, I had planned to use the VGA peripheral on the screen to implement a game, playable with the custom game controller. Basic interfacing with the screen was completed and can be found in the `vga-base-files` folder, but creating a frame buffer and more complex graphics would involve interfacing with the SDRAM on the board. This was outside the scope of the independent study and therefore was not implemented. 
 
-VGA may make for an interesting lab on it's own as students would need to use clock division and the design isn't very complex, but understanding VGA is something that would need to be taught.
-
-
-## Implementation Complexities
-In order to make a game, a significant amount of overhead is going to be required to know when to draw what to the screen. This, combined with the lack of available memory, would make creating a game difficult. If time permitted, I would have liked to make use of the two SDRAM chips on the DE2 by writing a frame buffer to one of the chips while reading the other to actually put it on the screen. This is not too far outside the realm of possibility but creating an SDRAM interface is tricky, and given the time constraints of this course, not possible.
-
-In order to use many of the peripherals on the DE2-115, you need to have some sort of processor implemented, so that you can interface with them over an Avalon bus connection. This was outside the scope of this independent study, so many of the boards peripherals were never used.
+VGA may make for an interesting lab on its own as students would need to use clock division and the design isn't very complex, but understanding VGA is something that would need to be taught.
 
 ## Problems Encountered and Limitations
+As mentioned above, many of these labs were going to utilize some of the different peripherals on the DE2-115 development board. Examples of this are the FIR filter lab which was going to use the audio jacks and the UART lab which was going to use the LCD screen.
 
+The problem with this however is that the IP cores provided to interface with the peripherals are all meant to be interfaced with an Avalon bus. The Avalon bus is Intel's internal FPGA bus that is used in designs that implement microprocessors. It is essentially the Intel FPGA version of an APB bus. 
 
-## Limitations with the DE2-115
+Unfortunately, this means that to interface with many of the components on the board, we would need to implement a processor, which is outside the scope of what these labs aim to do. It's theoretically possible to write IP cores to interface with each of the peripherals, although that still comes with its own complexities.
 
+## Conclusion
+I hope that these labs are fun, interesting, and help students apply the knowledge learned in ECE 337. I believe that providing real world examples, and showing real world implementations of the topics we learn in ECE is critical in aiding students understanding.
+
+## Appendix
