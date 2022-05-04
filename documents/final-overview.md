@@ -64,6 +64,8 @@ The problem with this however is that the IP cores provided to interface with th
 Unfortunately, this means that to interface with many of the components on the board, we would need to implement a processor, which is outside the scope of what these labs aim to do. It's theoretically possible to write IP cores to interface with each of the peripherals, although that still comes with its own complexities.
 
 ## Conclusion
+Over the course of the semester I have learned a lot about the power of FPGAs, digital design, and have gotten exposure to writing lab experiments for students. Taking ECE337 and applying that knowledge to my independent study has really advanced my understanding of digital logic design and how devices such as microcontrollers work. I've also learned a lot about the uses of FPGAs and can see why some processing intensive applications can benefit from having an FPGA in the mix. Lastly, I have gained experience with creating lab documents and helping others learn. This is invaluable to me because I someday hope to come back to academia and pass on my knowledge by teaching.
+
 I hope that these labs are fun, interesting, and help students apply the knowledge learned in ECE 337. I believe that providing real world examples, and showing real world implementations of the topics we learn in ECE is critical in aiding students understanding.
 
 ## Appendix
